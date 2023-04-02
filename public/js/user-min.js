@@ -1,0 +1,1 @@
+var simplemde=new SimpleMDE({element:document.getElementById("simplemde"),hideIcons:["guide","fullscreen","side-by-side","preview"],parsingConfig:{allowAtxHeaderWithoutSpace:!0,strikethrough:!1,underscoresBreakWords:!0},promptURLs:!0,spellChecker:!1,tabSize:4});$('input[name="fielduploader"]').fileuploader({addMore:!0});

@@ -1,0 +1,539 @@
+/* ==========================================================================
+3. Help center
+========================================================================== */
+//Help page
+.help-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    img {
+        max-height: 45px;
+        max-width: 45px;
+        padding-right: 20px;
+        border-right: 1px solid $white;
+    }
+
+    .title {
+        color: $white;
+        padding-left: 20px;
+        position: relative;
+        top: 3px;
+    }
+}
+
+.help-subheader {
+    padding: 20px 0 30px 0;
+}
+
+//Search input wrapper
+.help-search-wrapper {
+    position: relative;
+    width: 100%; //input
+
+    input {
+        width: 100%;
+        padding: 20px 32px 21px 59px;
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        outline: none;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 18px;
+        border-radius: 4px;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+        -webkit-transition: background .4s, box-shadow .2s;
+        transition: background .4s, box-shadow .2s; //placeholders
+
+        &::-webkit-input-placeholder {
+            /* Chrome/Opera/Safari */
+            color: rgba(255, 255, 255, 0.7) !important;
+        }
+
+        &::-moz-placeholder {
+            /* Firefox 19+ */
+            color: rgba(255, 255, 255, 0.7) !important;
+        }
+
+        &:-ms-input-placeholder {
+            /* IE 10+ */
+            color: rgba(255, 255, 255, 0.7) !important;
+        }
+
+        &:-moz-placeholder {
+            /* Firefox 18- */
+            color: rgba(255, 255, 255, 0.7) !important;
+        }
+
+        //focused input
+        &:focus {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.14);
+            background: $white;
+            color: $blue-grey;
+
+            +i {
+                color: $muted-grey;
+            }
+
+            &::-webkit-input-placeholder {
+                /* Chrome/Opera/Safari */
+                color: $placeholder !important;
+            }
+
+            &::-moz-placeholder {
+                /* Firefox 19+ */
+                color: $placeholder !important;
+            }
+
+            &:-ms-input-placeholder {
+                /* IE 10+ */
+                color: $placeholder !important;
+            }
+
+            &:-moz-placeholder {
+                /* Firefox 18- */
+                color: $placeholder !important;
+            }
+        }
+    }
+
+    //search icon
+    i {
+        font-size: 2rem;
+        color: rgba(255, 255, 255, 0.7);
+        position: absolute;
+        top: 18px;
+        left: 18px;
+    }
+}
+
+//Help section layout
+.section.help-section {
+    background: #EDF0F2; //Card
+
+    .category-card {
+        box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.03);
+
+        .card-body {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            .icon {
+                width: 110px;
+                height: 110px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                i {
+                    font-size: 3.5rem;
+                    color: $icon-grey !important;
+                }
+            }
+
+            //Inner section
+            .inner-content {
+                padding-left: 25px;
+
+                .title {
+                    margin-bottom: 10px !important;
+                    font-weight: 400;
+                    color: $primary;
+                }
+
+                .inner-text {
+                    color: $muted-grey !important;
+                }
+
+                //Meta
+                .card-meta {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    margin-top: 12px;
+
+                    .small-avatar {
+                        height: 34px;
+                        width: 34px;
+                        border-radius: 50%;
+                        margin-right: 10px;
+                        border: 2px solid $white;
+                        position: relative;
+
+                        &:not(:first-child) {
+                            margin-left: -19px;
+                        }
+
+                        &:first-child {
+                            z-index: 3;
+                        }
+
+                        &:nth-child(2) {
+                            z-index: 2;
+                        }
+
+                        &:nth-child(3) {
+                            z-index: 1;
+                        }
+
+                        &:nth-child(4) {
+                            z-index: 0;
+                        }
+
+                        &.is-more {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            color: $white;
+                            background: $muted-grey;
+                            font-weight: 500;
+                            font-size: 13px;
+
+                            span {
+                                position: relative;
+                                top: -2px;
+                                left: -1px;
+                            }
+                        }
+                    }
+
+                    .meta-info {
+                        color: $muted-grey !important;
+
+                        .articles-number {
+                            font-size: 13px;
+                        }
+
+                        .authors {
+                            font-size: 13px;
+
+                            span {
+                                color: $blue;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+5. Help category
+========================================================================== */
+.help-container {
+    position: relative; //grey background frame
+
+    .shadow-bg {
+        width: 100%;
+
+        &:before {
+            content: ' ';
+            position: absolute;
+            display: block;
+            top: 50px;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: #ebeef1;
+            border-radius: 4px;
+            -webkit-transition: background .3s;
+            transition: background .3s;
+            z-index: 0;
+            margin: 0 10px;
+        }
+    }
+
+    //Header
+    .category-header {
+        padding: 30px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        position: relative;
+        top: 30px;
+        z-index: 2;
+
+        .icon {
+            width: 110px;
+            height: 110px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            i {
+                font-size: 3.5rem;
+                color: $icon-grey !important;
+            }
+        }
+
+        //Inner section
+        .inner-content {
+            padding-left: 25px;
+
+            .title {
+                margin-bottom: 10px !important;
+                font-weight: 400;
+                color: $primary;
+            }
+
+            .inner-text {
+                color: $muted-grey !important;
+            }
+
+            //meta
+            .card-meta {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                margin-top: 12px;
+
+                .small-avatar {
+                    height: 34px;
+                    width: 34px;
+                    border-radius: 50%;
+                    margin-right: 10px;
+                    border: 2px solid $white;
+
+                    &:not(:first-child) {
+                        margin-left: -19px;
+                    }
+
+                    &:first-child {
+                        z-index: 3;
+                    }
+
+                    &:nth-child(2) {
+                        z-index: 2;
+                    }
+
+                    &:nth-child(3) {
+                        z-index: 1;
+                    }
+
+                    &:nth-child(4) {
+                        z-index: 0;
+                    }
+
+                    &.is-more {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        color: $white;
+                        background: $muted-grey;
+                        font-weight: 500;
+                        font-size: 13px;
+
+                        span {
+                            position: relative;
+                            top: -2px;
+                            left: -1px;
+                        }
+                    }
+                }
+
+                .meta-info {
+                    color: $muted-grey !important;
+
+                    .articles-number {
+                        font-size: 13px;
+                    }
+
+                    .authors {
+                        font-size: 13px;
+
+                        span {
+                            color: $primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //List of help articles
+    .articles-list {
+        position: relative;
+        margin: 30px;
+        background: $white;
+        width: calc(100% - 60px);
+        border-radius: 4px;
+        border: 1px solid $border-grey;
+        box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.05); //list item
+
+        .help-article {
+            padding: 30px;
+
+            a {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+                .inner-content {
+                    .title {
+                        margin-bottom: 10px !important;
+                        font-weight: 400;
+                        color: $primary;
+                    }
+
+                    .inner-text {
+                        color: $muted-grey !important;
+                    }
+
+                    .card-meta {
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        margin-top: 12px;
+
+                        .small-avatar {
+                            height: 34px;
+                            width: 34px;
+                            border-radius: 50%;
+                            margin-right: 10px;
+                            border: 2px solid $white;
+                            position: relative;
+                        }
+
+                        .meta-info {
+                            color: $muted-grey !important;
+                            line-height: 1.1rem;
+
+                            .author {
+                                font-size: 13px;
+
+                                span {
+                                    color: $blue;
+                                }
+                            }
+
+                            .status {
+                                font-size: 12px;
+                                color: $title-grey;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &:not(:last-child) {
+                border-bottom: 1px solid $border-grey;
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+5. Help article
+========================================================================== */
+.single-help-article {
+    border-radius: 4px;
+    border: 1px solid $border-grey;
+    margin-top: 20px;
+    padding: 60px 30px; //inner section
+
+    .article-inner {
+        max-width: 640px;
+        margin: 0 auto;
+
+        h2 {
+            font-weight: 500;
+        }
+
+        h3 {
+            padding-top: 20px;
+            color: $muted-grey;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        //article meta
+        .article-meta {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: $muted-grey !important;
+            line-height: 1.1rem;
+
+            .small-avatar {
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+            }
+
+            .meta-info {
+                color: $muted-grey !important;
+                line-height: 1.1rem;
+                margin-left: 15px;
+
+                .author {
+                    font-size: 13px;
+
+                    span {
+                        color: $blue;
+                    }
+                }
+
+                .status {
+                    font-size: 12px;
+                    color: $title-grey;
+                }
+            }
+        }
+
+        //article content
+        .content {
+            padding-top: 30px;
+
+            p {
+                font-size: 16px;
+                color: $blue-grey;
+            }
+
+            h4 {
+                padding-top: 10px;
+                font-weight: 500;
+            }
+
+            ul {
+                font-size: 16px;
+            }
+        }
+
+        //rating smileys
+        .rating-section {
+            width: 100%;
+            text-align: center;
+
+            .question {
+                padding-top: 25px;
+                font-size: 1.1rem;
+                font-weight: 500;
+                color: $title-grey
+            }
+
+            .rating-buttons {
+                position: relative;
+                top: 18px;
+            }
+
+            .rating-button {
+                max-width: 60px;
+                max-height: 60px;
+                cursor: pointer;
+
+                i {
+                    font-size: 50px;
+                    font-weight: 200;
+                    color: $title-grey;
+                    transition: all 0.3s;
+                }
+
+                &:hover i, &.is-active i {
+                    color: $primary;
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}
