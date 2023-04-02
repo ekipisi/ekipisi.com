@@ -1,0 +1,38 @@
+<nav class="navbar navbar-wrapper  navbar-light is-transparent is-static">
+    <div class="container">
+        <!-- Brand -->
+        <div class="navbar-brand">
+            <a class="navbar-item" href="index.html">
+                <img src="/assets/images/logos/ekipisi-white-logo.svg" alt="Ekipişi">
+            </a>
+            <!-- Responsive toggle -->
+            <div class="custom-burger" data-target="is-static">
+                <a class="responsive-btn" href="javascript:void(0);">
+                    <span class="menu-toggle">	
+                        <span class="icon-box-toggle"> 	
+                            <span class="rotate">
+                                <i class="icon-line-top"></i>
+                                <i class="icon-line-center"></i>
+                                <i class="icon-line-bottom"></i> 
+                            </span>
+                        </span>
+                    </span>
+                </a>
+            </div>
+            <!-- /Responsive toggle -->
+        </div>
+
+        <!-- Navbar menu -->
+        <div id="is-static" class="navbar-menu">
+            <!-- Navbar Start -->
+            <div class="navbar-start">
+                {{> menu-start }}
+            </div>
+
+            <!-- Navbar end -->
+            <div class="navbar-end">
+                {{> menu-end }}
+            </div>
+        </div>
+    </div>
+</nav>

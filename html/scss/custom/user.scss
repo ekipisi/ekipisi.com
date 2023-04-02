@@ -1,0 +1,61 @@
+body.user {
+    background-color: #EDF0F2;
+}
+
+.user-menu {
+    @include mq("desktop") {
+        overflow: inherit !important;
+    }
+    & ul {
+        & li {
+            font-size: 1.1rem;
+            border-right: 1px solid rgba(0, 0, 0, .04);
+            &:last-child {
+                border-right: 0;
+            }
+            & a,
+            & nav {
+                padding-right: 30px;
+                padding-left: 30px;
+                color: #666 !important;
+                &:hover {
+                    background-color: #FAFAFA;
+                }
+            }
+            &.is-active a {
+                color: #00d1b2 !important;
+            }
+        }
+    }
+}
+
+.search-form {
+    & input {
+        border: 0;
+        border-radius: 0;
+        height: 2.74em !important;
+        margin: 0;
+    }
+}
+
+ul.unstyled-list {
+    list-style: none;
+    margin: 0;
+}
+
+.solution-center {
+    & .card-body {
+        height: 130px !important;
+
+        & img {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            display: inline-block;
+            border: none;
+            margin: auto;
+        }
+    }
+}

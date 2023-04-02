@@ -1,0 +1,97 @@
+---
+layout: auth
+title: Giriş Yap
+---
+<!-- Wrapper -->
+<div class="login-wrapper columns is-gapless">
+    <!-- Image section (hidden on mobile) -->
+    <div class="column login-column is-8 is-hidden-mobile hero-banner">
+        {{> auth-hero }}
+    </div>
+    <!-- /Image section -->
+    <!-- Form section -->
+    <div class="column is-4">
+        <div class="hero is-fullheight">
+            <div class="hero-heading">
+                <div class="section has-text-centered">
+                    <a href="index.html">
+                        <img class="top-logo" src="assets/images/logos/ekipisi-blue-logo.svg" alt="Ekipişi">
+                    </a>
+                </div>
+                <div class="no-account-link has-text-centered">
+                    <a href="signup.html">
+                        Hesabınız yok mu, kayıt olmak için tıklayın.</a>
+                </div>
+            </div>
+            <div class="hero-body">
+                <div class="container">
+                    <div class="columns">
+                        <div class="column is-8 is-offset-2">
+                            <!-- Login Form -->
+                            <form class="validate-with-message">
+                                <div id="signin-form" class="login-form animated preFadeInLeft fadeInLeft">
+                                    <!-- Input -->
+                                    <div class="field pb-10">
+                                        <div class="control has-icons-right">
+                                            <input type="email" class="input is-large required email" name="email" id="email" placeholder="E-posta Adresiniz">
+                                            <span class="icon is-medium is-right">
+                                                <i class="sl sl-icon-globe"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <!-- Input -->
+                                    <div class="field pb-10">
+                                        <div class="control has-icons-right">
+                                            <input type="password" class="input is-large required" name="password" id="password" placeholder="Parolanız">
+                                            <span class="icon is-medium is-right">
+                                                <i class="sl sl-icon-lock"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <!-- Submit -->
+                                    <p class="control login">
+                                        <button class="button button-cta primary-btn btn-align-lg is-bold is-fullwidth raised no-lh">Giriş Yap</button>
+                                    </p>
+                                </div>
+                            </form>
+                            <!-- /Login Form -->
+                            <!-- Reset Form -->
+                            <form class="validate-with-message">
+                                <div id="recover-form" class="login-form animated preFadeInLeft fadeInLeft is-hidden">
+                                    <!-- Input -->
+                                    <div class="field pb-10">
+                                        <div class="control has-icons-right">
+                                            <input type="email" class="input is-large required email" name="pwd_email" id="pwd_email" placeholder="E-posta Adresiniz">
+                                            <span class="icon is-medium is-right">
+                                                <i class="sl sl-icon-globe"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <!-- Submit -->
+                                    <p class="control login">
+                                        <button class="button button-cta primary-btn btn-align-lg is-bold is-fullwidth raised no-lh">Sıfırlama Bağlantısı Gönder</button>
+                                    </p>
+                                </div>
+                            </form>
+                            <!-- /Reset Form -->
+                            <!-- Toggles -->
+                            <div id="recover" class="section forgot-password animated preFadeInLeft fadeInLeft">
+                                <p class="has-text-centered">
+                                    <a href="#">Parolamı Unuttum?</a>
+                                </p>
+                            </div>
+                            <div id="back-to-login" class="section forgot-password animated preFadeInLeft fadeInLeft is-hidden">
+                                <p class="has-text-centered">
+                                    <a href="#">Geri Dön</a>
+                                </p>
+                            </div>
+                            <!-- /Toggles -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Form section -->
+</div>
+<!-- /Wrapper -->

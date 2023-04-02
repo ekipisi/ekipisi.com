@@ -1,0 +1,119 @@
+---
+layout: user
+title: Üye Paneli
+---
+<div class="hero is-relative is-theme-info is-bold">
+    {{> navbar-double-light }}
+</div>
+{{> user-menu }}
+<section class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-3">
+                <div class="flex-card light-bordered light-raised">
+                    <div class="card-body no-padding">
+                        <ul class="list-block">
+                            <li class="is-active">
+                                <a href="profile.html">
+                                    <i class="fa fa-user mr-20"></i> Hesap Bilgileriniz</a>
+                            </li>
+                            <li>
+                                <a href="profile-password.html">
+                                    <i class="fa fa-key mr-20"></i> Parola İşlemleri</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-9">
+                <div class="flex-card light-bordered light-raised">
+                    <div class="card-body">
+                        <div class="content">
+                            <h2 class="no-margin is-size-5">Hesap Bilgileriniz</h2>
+                            <form class="validate-with-message">
+                            <div class="columns mt-10">
+                                <div class="column is-6">
+                                    <label for="firstname">Ad</label>
+                                    <input type="text" class="input is-large mt-5" name="firstname" id="firstname" required/>
+                                </div>
+                                <div class="column is-6">
+                                    <label for="lastname">Soyad</label>
+                                    <input type="text" class="input is-large mt-5" name="lastname" id="lastname" required/>
+                                </div>
+                            </div>
+                            <div class="columns">
+                                <div class="column is-12">
+                                    <label for="email">E-posta</label>
+                                    <input type="email" class="required email input is-large mt-5" name="email" id="email" />
+                                </div>
+                            </div>
+                            <h4 class="has-text-centered mt-20">Adres Bilgileri</h4>
+                            <div class="columns">
+                                <div class="column is-12">
+                                    <label for="address">Adres</label>
+                                    <textarea class="textarea is-grow mt-5 is-secondary-focus required" rows="5" name="address" id="address"></textarea>
+                                </div>
+                            </div>
+                            <div class="columns mt-10">
+                                <div class="column is-6">
+                                    <label for="city" class="is-block">Şehir</label>
+                                    <div class="select is-large is-fullwidth mt-5">
+                                        <select class="required" name="city" id="city">
+                                            <option selected="selected" value="">- Lütfen Şehir Seçiniz -
+                                            </option>
+                                            <option value="Adana">
+                                                Adana
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="column is-6">
+                                    <label for="state">İlçe</label>
+                                    <input type="text" class="input is-large mt-5 required" name="state" id="state" />
+                                </div>
+                            </div>
+                            <div class="columns mt-10">
+                                <div class="column is-6">
+                                    <label for="phone">Telefon</label>
+                                    <input type="text" class="input is-large mt-5" name="phone" id="phone" />
+                                </div>
+                                <div class="column is-6">
+                                    <label for="lastname">Cep Telefonu</label>
+                                    <input type="text" class="input is-large mt-5 required" name="mobile" id="mobile" />
+                                </div>
+                            </div>
+                            <h4 class="has-text-centered mt-20">Fatura Bilgileri <small>(Bireysel Kullanıcı)</small></h4>
+                            <div class="columns mt-10">
+                                <div class="column is-6">
+                                    <label for="tax_no">Vergi Numaranız</label>
+                                    <input type="text" class="input is-large mt-5 required" name="tax_no" id="tax_no" />
+                                </div>
+                                <div class="column is-6">
+                                    <label for="tax_office">Vergi Dairesi</label>
+                                    <input type="text" class="input is-large mt-5 required" name="tax_office" id="tax_office" />
+                                </div>
+                            </div>
+                            <div class="columns">
+                                <div class="column is-12">
+                                    <label for="company_name">Firma Adı</label>
+                                    <input type="text" class="input is-large mt-5 required" name="company_name" id="company_name" />
+                                </div>
+                            </div>
+                            <div class="columns">
+                                <div class="column is-12">
+                                    <label for="identity_no">TC Kimlik Numaranız</label>
+                                    <input type="text" class="input is-large mt-5 required" tckimlikno="true" name="identity_no" id="identity_no" />
+                                </div>
+                            </div>
+                            <div class="mt-20 has-text-left">
+                                <button type="submit" class="button is-medium is-info">Bilgileri Güncelle</button>
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{> footer-spaced-light}}

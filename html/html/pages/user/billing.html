@@ -1,0 +1,65 @@
+---
+layout: user
+title: Ödemeler
+---
+<div class="hero is-relative is-theme-info is-bold">
+    {{> navbar-double-light }}
+</div>
+{{> user-menu }}
+<section class="section">
+    <div class="container">
+        <div class="flex-card light-bordered light-raised">
+            <div class="card-body no-padding">
+                <div class="content">
+                    <h2 class="no-margin is-size-5 padding-20">Tüm Makbuzlar</h2>
+                    <table class="responsive-table is-light-grey">
+                        <tbody>
+                            <tr>
+                                <th>Makbuz No</th>
+                                <th>Toplam</th>
+                                <th>Ödeme Tarihi</th>
+                                <th>Durum</th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <td data-th="Makbuz No">
+                                    EKP-309319
+                                </td>
+                                <td data-th="Toplam">
+                                    $ 34.43
+                                </td>
+                                <td data-th="Ödeme Tarihi">
+                                    23 Jul 2018
+                                </td>
+                                <td data-th="Durum">
+                                    <span class="tag squared is-success">Ödendi</span>
+                                </td>
+                                <td data-th="İşlem">
+                                    <a href="#" class="button is-small btn-align primary-btn">Fatura Görüntüle</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-th="Makbuz No">
+                                    EKP-309319
+                                </td>
+                                <td data-th="Toplam">
+                                    $ 34.43
+                                </td>
+                                <td data-th="Ödeme Tarihi">
+                                    23 Jul 2018
+                                </td>
+                                <td data-th="Durum">
+                                    <span class="tag squared is-danger">Ödenmedi</span>
+                                </td>
+                                <td data-th="İşlem">
+                                    <a href="#" class="button is-small btn-align primary-btn">Fatura Görüntüle</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{> footer-spaced-light}}
