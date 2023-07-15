@@ -20,5 +20,8 @@
         "vite": "^4.0.0",
         "laravel-echo": "^1.15.2",
         "pusher-js": "^8.2.0"
+    },
+    "dependencies": {
+        "@sentry/react": "^7.40.0"
     }
 }
