@@ -1,24 +1,23 @@
 import type { Metadata } from 'next';
 
+import '@/styles/index.css';
+
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
+import { Inter } from 'next/font/google';
 import { notFound } from 'next/navigation';
 
 import { routing } from '@/i18n/routing';
 import Theme from '@/providers/theme';
-import { Inter } from 'next/font/google';
+import { env } from '@/utils/env';
 
 const inter = Inter({
   variable: '--font-inter',
   subsets: ['latin'],
 });
 
-import '@/styles/index.css';
-
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    metadataBase: new URL(
-      process.env.NEXT_PUBLIC_SITE_URL || 'https://ekipisi.com.tr'
-    ),
+    metadataBase: new URL(env.SITE_URL),
     title: {
       default: 'Ekipişi',
       template: '%s • Ekipişi',

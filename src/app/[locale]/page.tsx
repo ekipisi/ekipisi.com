@@ -1,3 +1,4 @@
+import { env } from '@/utils/env';
 import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
 
@@ -16,9 +17,7 @@ export async function generateMetadata({ params }: { params: Params }) {
     ...baseMetadata,
     openGraph: {
       ...baseMetadata,
-      url: new URL(
-        process.env.NEXT_PUBLIC_SITE_URL || 'https://ekipisi.com.tr'
-      ).toString(),
+      url: new URL(env.SITE_URL).toString(),
     },
     twitter: {
       ...baseMetadata,
