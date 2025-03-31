@@ -1,6 +1,7 @@
-import { env } from '@/utils/env';
 import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
+
+import { env } from '@/utils/env';
 
 type Params = Promise<{ locale: string }>;
 

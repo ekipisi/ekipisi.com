@@ -3,8 +3,8 @@ import type { Metadata } from 'next';
 import '@/styles/index.css';
 
 import { NextIntlClientProvider } from 'next-intl';
-import { Inter } from 'next/font/google';
 import { getLocale } from 'next-intl/server';
+import { Inter } from 'next/font/google';
 import { getLangDir } from 'rtl-detect';
 
 import Theme from '@/providers/providers';

@@ -1,15 +1,17 @@
 import bcrypt from 'bcrypt';
 import { NextAuthOptions } from 'next-auth';
+import { JWT } from 'next-auth/jwt';
 import CredentialsProvider from 'next-auth/providers/credentials';
+import EmailProvider from 'next-auth/providers/email';
 import GitHubProvider from 'next-auth/providers/github';
 import GoogleProvider from 'next-auth/providers/google';
-import EmailProvider from 'next-auth/providers/email';
-import { PrismaAdapter } from '@auth/prisma-adapter';
-import { prisma } from './prismaDb';
-import type { Adapter } from 'next-auth/adapters';
-import { JWT } from 'next-auth/jwt';
-import { env } from './env';
 
+import { PrismaAdapter } from '@auth/prisma-adapter';
+
+import { env } from './env';
+import { prisma } from './prismaDb';
+
+import type { Adapter } from 'next-auth/adapters';
 export const authOptions: NextAuthOptions = {
   pages: {
     signIn: '/auth/signin',
