@@ -2,12 +2,12 @@ import type { Metadata } from 'next';
 
 import '@/styles/index.css';
 
-import { hasLocale, NextIntlClientProvider } from 'next-intl';
+import { NextIntlClientProvider } from 'next-intl';
 import { Inter } from 'next/font/google';
-import { notFound } from 'next/navigation';
+import { getLocale } from 'next-intl/server';
+import { getLangDir } from 'rtl-detect';
 
-import { routing } from '@/i18n/routing';
-import Theme from '@/providers/theme';
+import Theme from '@/providers/providers';
 import { env } from '@/utils/env';
 
 const inter = Inter({
@@ -41,22 +41,17 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function RootLayout({
   children,
-  params,
 }: Readonly<{
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
 }>) {
-  // Ensure that the incoming `locale` is valid
-  const { locale } = await params;
-  if (!hasLocale(routing.locales, locale)) {
-    notFound();
-  }
+  const locale = await getLocale();
+  const direction = getLangDir(locale);
 
   return (
     // We suppress the Hydration warning because of the next-themes package.
     // It requires this to be set since, we don't really know the user theme
     // preference on the server side.
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={locale} dir={direction} suppressHydrationWarning={true}>
       <body
         className={`${inter.variable} mx-auto flex flex-col min-h-screen antialiased`}
       >

@@ -1,14 +1,19 @@
-import { hasLocale } from 'next-intl';
 import { getRequestConfig } from 'next-intl/server';
+import { cookies, headers } from 'next/headers';
 
-import { routing } from './routing';
+export default getRequestConfig(async () => {
+  const locales = ['tr', 'en'];
 
-export default getRequestConfig(async ({ requestLocale }) => {
-  // Typically corresponds to the `[locale]` segment
-  const requested = await requestLocale;
-  const locale = hasLocale(routing.locales, requested)
-    ? requested
-    : routing.defaultLocale;
+  const defaultLocale = (await headers()).get('accept-language')?.split(',')[0];
+  let locale = (
+    (await cookies()).get('NEXT_LOCALE')?.value ||
+    defaultLocale ||
+    'tr'
+  ).substring(0, 2);
+
+  if (locales.indexOf(locale) == -1) {
+    locale = 'tr';
+  }
 
   return {
     locale,
