@@ -4,15 +4,17 @@ import '@/styles/index.css';
 
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale } from 'next-intl/server';
-import { Inter } from 'next/font/google';
+import { Poppins } from 'next/font/google';
 import { getLangDir } from 'rtl-detect';
 
-import Theme from '@/providers/providers';
 import { env } from '@/utils/env';
+import Navbar from '@/components/header/navbar';
+import Providers from '@/providers/providers';
 
-const inter = Inter({
-  variable: '--font-inter',
-  subsets: ['latin'],
+const poppins = Poppins({
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-poppins',
+  subsets: ['latin', 'latin-ext'],
 });
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -52,16 +54,16 @@ export default async function RootLayout({
     // It requires this to be set since, we don't really know the user theme
     // preference on the server side.
     <html lang={locale} dir={direction} suppressHydrationWarning={true}>
-      <body
-        className={`${inter.variable} mx-auto flex flex-col min-h-screen antialiased`}
-      >
-        <NextIntlClientProvider>
-          <Theme>
-            <div className="px-3 w-3xl max-w-3xl grow mx-auto antialiased">
-              {children}
-            </div>
-          </Theme>
-        </NextIntlClientProvider>
+      <body className={`${poppins.variable} max-w-full antialiased`}>
+        <div className="flex flex-col overflow-x-clip">
+          <NextIntlClientProvider>
+            <Providers>
+              <Navbar />
+              {/* Main content area */}
+              <div className="flex flex-grow flex-col">{children}</div>
+            </Providers>
+          </NextIntlClientProvider>
+        </div>
       </body>
     </html>
   );

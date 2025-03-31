@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 :root {
-  /* Your default theme */
+  font-family: 'Poppins', 'Poppins Fallback', Arial, Helvetica, sans-serif;
   --background: white;
   --foreground: black;
 }
