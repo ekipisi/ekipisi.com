@@ -19,6 +19,11 @@
       }
     ],
     "paths": {
+      "@/components/*": ["./src/components/*"],
+      "@/providers/*": ["./src/providers/*"],
+      "@/styles/*": ["./src/styles/*"],
+      "@/types/*": ["./src/types/*"],
+      "@/utils/*": ["./src/utils/*"],
       "@/*": ["./src/*"]
     }
   },
