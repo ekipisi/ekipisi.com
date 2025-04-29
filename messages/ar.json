@@ -3,5 +3,15 @@
     "Meta": {
         "Title": "Ekipişi - Yazılım ve Danışmanlık Hizmetleri",
         "Description": ""
+    },
+    "Header": {
+        "ThemeSwitcher": "Tema Değiştirici",
+        "LanguageSwitcher": "Dil Değiştirici",
+        "Search": "Ara"
+    },
+    "Shared": {
+        "Loading": "Yükleniyor...",
+        "Error": "Bir hata oluştu. Lütfen daha sonra tekrar deneyin.",
+        "NoData": "Gösterilecek veri yok."
     }
 }

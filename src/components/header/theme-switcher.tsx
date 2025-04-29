@@ -1,22 +1,25 @@
 "use client";
 
-import { Loader, MoonIcon, SunIcon } from "lucide-react";
-import { useId } from "react";
+import { Loader, MoonIcon, SunIcon } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+import { useId } from 'react';
 
-import { Button } from "@/components/ui/button";
-import { Switch } from "@/components/ui/switch";
-import { useDarkTheme } from "@hooks/useDarkTheme";
-import { Label } from "@radix-ui/react-label";
+import { Button } from '@/components/ui/button';
+import { Switch } from '@/components/ui/switch';
+import { useDarkTheme } from '@hooks/useDarkTheme';
+import { Label } from '@radix-ui/react-label';
 
 export const ThemeSwitcher = () => {
   const [isDark, mounted, setTheme] = useDarkTheme();
   const id = useId();
 
+  const t = useTranslations();
+
   if (!mounted) {
     return (
       <Button size="icon" variant="ghost">
         <Loader className="size-5 animate-spin text-zinc-400" />
-        <span className="sr-only">Loading...</span>
+        <span className="sr-only">{t("Shared.Loading")}</span>
       </Button>
     );
   }
@@ -38,7 +41,7 @@ export const ThemeSwitcher = () => {
         </span>
       </div>
       <Label htmlFor={id} className="sr-only">
-        Theme Switcher
+        {t("Header.ThemeSwitcher")}
       </Label>
     </div>
   );

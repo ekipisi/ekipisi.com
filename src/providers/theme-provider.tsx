@@ -1,11 +1,9 @@
 "use client";
 
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import {
-  ThemeProvider as NextThemesProvider,
-  ThemeProviderProps,
-} from "next-themes";
+import { ThemeProvider as NextThemesProvider, ThemeProviderProps } from 'next-themes';
+
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export default function ThemeProvider({
   children,

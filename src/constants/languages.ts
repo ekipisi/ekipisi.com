@@ -1,12 +1,12 @@
 const languages = ["tr", "en", "uz", "ar"];
 
-const defaultLanguage = languages[0];
+const defaultLanguage = "tr";
 
 const locales = [
-  { id: languages[0], name: "Türkçe", flag: "/flags/tr.svg" },
-  { id: languages[1], name: "English", flag: "/flags/us.svg" },
-  { id: languages[3], name: "Oʻzbek", flag: "/flags/uz.svg" },
-  { id: languages[4], name: "العربية", flag: "/flags/sa.svg" },
+  { id: "tr", name: "Türkçe", flag: "/flags/tr.svg" },
+  { id: "en", name: "English", flag: "/flags/us.svg" },
+  { id: "uz", name: "Oʻzbek", flag: "/flags/uz.svg" },
+  { id: "ar", name: "العربية", flag: "/flags/sa.svg" },
 ];
 
 export { languages, defaultLanguage, locales };

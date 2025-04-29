@@ -1,5 +1,5 @@
-import { routes } from "@constants/site";
-import { env } from "@lib/env";
+import { routes } from '@constants/site';
+import { env } from '@lib/env';
 
 import type { MetadataRoute } from "next";
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

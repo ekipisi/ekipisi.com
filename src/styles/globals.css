@@ -77,8 +77,9 @@
 
 @layer utilities {
   body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', 'Poppins Fallback', Arial, Helvetica, sans-serif;
   }
+
 }
 
 @layer base {
@@ -159,5 +160,44 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  .title {
+    @apply text-foreground decoration-border/75 mb-10 text-3xl font-bold text-balance underline decoration-2 underline-offset-8;
+  }
+
+  .recent-title {
+    @apply text-foreground decoration-border/75 text-2xl font-bold text-balance underline decoration-2 underline-offset-8;
+  }
+
+  span.divider {
+    @apply text-muted-foreground;
+  }
+
+  .prose pre {
+    @apply bg-accent overflow-x-auto rounded-lg px-5 py-4 text-sm;
+  }
+
+  .prose code {
+    @apply rounded-lg px-1 py-0.5;
+  }
+
+  .prose pre code {
+    @apply p-0;
+    line-height: 1.75;
+  }
+
+  .prose code span {
+    @apply font-medium;
   }
 }

@@ -1,23 +1,21 @@
-import { NextIntlClientProvider, hasLocale } from "next-intl";
-import { notFound } from "next/navigation";
-import { routing } from "@/i18n/routing";
-import { getLangDir } from "rtl-detect";
+import '@styles/globals.css';
+
+import { hasLocale, NextIntlClientProvider } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
+import { Poppins } from 'next/font/google';
+import { notFound } from 'next/navigation';
+import { getLangDir } from 'rtl-detect';
+
+import { routing } from '@/i18n/routing';
+import ThemeProvider from '@/providers/theme-provider';
+import { env } from '@lib/env';
 
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
-import ThemeProvider from "@/providers/theme-provider";
-import { env } from "@lib/env";
-import { Geist, Geist_Mono } from "next/font/google";
-import "@styles/globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const poppins = Poppins({
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-poppins',
+  subsets: ['latin', 'latin-ext'],
 });
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -76,7 +74,7 @@ export default async function RootLayout({
       className="scroll-smooth"
     >
       <body
-        className={`${geistSans.variable} ${geistMono.variable} h-screen w-full antialiased`}
+        className={`${poppins.variable} mx-auto flex flex-col min-h-screen antialiased`}
       >
         <NextIntlClientProvider>
           <ThemeProvider
