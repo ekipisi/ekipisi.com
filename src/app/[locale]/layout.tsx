@@ -7,9 +7,18 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import ThemeProvider from "@/providers/theme-provider";
 import { env } from "@lib/env";
-import "@radix-ui/themes/styles.css";
+import { Geist, Geist_Mono } from "next/font/google";
 import "@styles/globals.css";
 
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("Meta");
@@ -63,11 +72,11 @@ export default async function RootLayout({
     <html
       lang={locale}
       dir={direction}
-      suppressHydrationWarning={true}
+      suppressHydrationWarning
       className="scroll-smooth"
     >
       <body
-        className={`h-screen w-full antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} h-screen w-full antialiased`}
       >
         <NextIntlClientProvider>
           <ThemeProvider

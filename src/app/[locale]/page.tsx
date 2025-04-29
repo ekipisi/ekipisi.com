@@ -1,10 +1,10 @@
-import { ThemeToggle } from "@components/header/theme-toggle";
+import { ThemeSwitcher } from "@components/header/theme-switcher";
 
 export default async function Page() {
   return (
     <div>
       Test Deneme
-      <ThemeToggle />
+      <ThemeSwitcher />
     </div>
   );
 }
