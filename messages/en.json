@@ -1,12 +1,7 @@
 {
-    "appName": "My Application",
-    "welcomeMessage": "Welcome to My Application!",
-    "errorMessages": {
-        "networkError": "Network error occurred. Please try again.",
-        "notFound": "The requested resource was not found."
-    },
-    "successMessages": {
-        "dataSaved": "Data saved successfully!",
-        "operationCompleted": "Operation completed successfully!"
+    "AppName": "Ekipişi",
+    "Meta": {
+        "Title": "Ekipişi - Yazılım ve Danışmanlık Hizmetleri",
+        "Description": ""
     }
 }
