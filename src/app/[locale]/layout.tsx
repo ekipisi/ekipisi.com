@@ -4,21 +4,12 @@ import { routing } from "@/i18n/routing";
 import { getLangDir } from "rtl-detect";
 
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import { getTranslations } from "next-intl/server";
 import ThemeProvider from "@/providers/theme-provider";
 import { env } from "@lib/env";
+import "@radix-ui/themes/styles.css";
 import "@styles/globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("Meta");
@@ -76,7 +67,7 @@ export default async function RootLayout({
       className="scroll-smooth"
     >
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`h-screen w-full antialiased`}
       >
         <NextIntlClientProvider>
           <ThemeProvider
